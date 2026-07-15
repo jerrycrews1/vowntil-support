@@ -19,6 +19,7 @@ Vowntil may process the following information locally to provide features you re
 - Named presets, app and website restriction modes, schedules, lock start and end times, and app settings.
 - Saved location-automation names, place labels, coordinates, radii, enabled states, entry times, and active-region identifiers.
 - Local lock History and enforcement events, including authorization changes, location entry or exit events, and whether a scheduled or manual lock completed or was interrupted.
+- A Hard Lock's preset name, identifier, start time, end time, and active state provided to Apple's ActivityKit framework for the system Live Activity.
 - Screen Time usage information Apple makes available to the Device Activity report extension, such as usage duration, pickups, notifications, app categories, and websites.
 - App version, iOS version, timestamps, session identifiers, and selection counts included in a diagnostics file only when you choose to export one.
 
@@ -29,6 +30,10 @@ Nerdquad does not receive this information from the app.
 Vowntil uses Apple's Family Controls, Managed Settings, Device Activity, and User Notifications frameworks. Apple controls Screen Time authorization, the private app and website picker, enforcement at the operating-system level, usage-report availability, and notification delivery.
 
 Apple may process device and Screen Time information under Apple's own terms and privacy policy. Vowntil does not receive your Apple ID credentials or Screen Time passcode.
+
+## Live Activities
+
+When Live Activities are enabled, Vowntil provides the active Hard Lock's preset name, identifier, start time, end time, and active state to Apple's ActivityKit framework so iOS can display the countdown on the Lock Screen and Dynamic Island. This information is not sent to Nerdquad. You can disable Live Activities for Vowntil in iOS Settings.
 
 ## Location and Apple Maps
 

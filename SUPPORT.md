@@ -37,6 +37,12 @@ Vowntil does not provide an in-app pause, password reset, recovery code, Face ID
 
 Vowntil is not device-management software. The device owner can still remove Vowntil's Screen Time authorization in iOS Settings or erase the device. Removing authorization causes iOS to stop Vowntil's restrictions. When Vowntil detects this during a lock, it records the interruption in local History and can send a local notification if notifications are enabled.
 
+### Does a Hard Lock appear on the Lock Screen?
+
+Yes. When Live Activities are enabled for Vowntil, a Hard Lock lasting eight hours or less displays its preset and remaining time on the Lock Screen and Dynamic Island. You can enable or disable this in iOS Settings.
+
+iOS limits a Live Activity to eight hours. Longer Hard Locks continue normally without a Live Activity; Screen Time enforcement does not depend on the Lock Screen presentation.
+
 ### How do location automations work?
 
 A location automation applies one of your presets when iOS reports that the device entered a saved circular region. It stops after iOS reports that the device exited. Vowntil stores the saved coordinates, radius, and entry state locally; it does not send them to Nerdquad.
