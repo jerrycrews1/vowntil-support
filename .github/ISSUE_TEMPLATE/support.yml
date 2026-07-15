@@ -1,0 +1,54 @@
+name: Vowntil support request
+description: Report a bug or ask for help with Vowntil
+title: "[Support] "
+labels:
+  - support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Vowntil. Do not include personal information, private app or website selections, or diagnostics files in a public issue.
+  - type: input
+    id: app-version
+    attributes:
+      label: Vowntil version
+      placeholder: "1.0 (11)"
+    validations:
+      required: true
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version
+      placeholder: "26.4.1"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device model
+      placeholder: "iPhone 17 Pro"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem without naming private app or website selections.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open...
+        2. Tap...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
