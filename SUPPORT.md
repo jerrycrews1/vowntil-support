@@ -1,6 +1,6 @@
 # Vowntil Support
 
-Vowntil is a free commitment tool that uses Apple's Screen Time frameworks to block selected apps, categories, and websites for a period you choose.
+Vowntil is a free commitment tool that uses Apple's Screen Time frameworks to restrict apps, categories, and websites during a Hard Lock or an automation you create.
 
 ## Get Help
 
@@ -23,12 +23,13 @@ Vowntil uses Apple's Family Controls, Managed Settings, and Device Activity fram
 
 Apple owns the Family Activity picker. Apps and websites are represented to Vowntil with private tokens, so Vowntil does not receive a conventional list of every installed app or the identity of selections outside Apple's approved interfaces.
 
-### What is the difference between the two restriction modes?
+### Can apps and websites use different restriction modes?
 
-- **Block Selected** shields only the apps, categories, and websites you choose.
-- **Allow Only Selected** shields everything covered by Screen Time except the apps and websites you choose to keep available.
+- **Block Selected** shields only the apps, categories, or websites you choose.
+- **Allow Only Selected** shields everything covered by Screen Time except the apps or websites you choose to keep available.
+- **Same as Apps** makes the website mode follow the app mode.
 
-Review the summary carefully before starting a Hard Lock.
+For example, you can allow only selected apps while blocking only selected websites, or block selected apps while allowing only a small set of websites. Review both summary rows carefully before starting a Hard Lock.
 
 ### Can Vowntil end a Hard Lock early?
 
@@ -36,17 +37,26 @@ Vowntil does not provide an in-app pause, password reset, recovery code, Face ID
 
 Vowntil is not device-management software. The device owner can still remove Vowntil's Screen Time authorization in iOS Settings or erase the device. Removing authorization causes iOS to stop Vowntil's restrictions. When Vowntil detects this during a lock, it records the interruption in local History and can send a local notification if notifications are enabled.
 
-### Why did a scheduled lock not start?
+### How do location automations work?
+
+A location automation applies one of your presets when iOS reports that the device entered a saved circular region. It stops after iOS reports that the device exited. Vowntil stores the saved coordinates, radius, and entry state locally; it does not send them to Nerdquad.
+
+Location automations require **Always** location access so iOS can deliver region events when Vowntil is not on screen. Vowntil monitors at most 20 enabled locations, which is the iOS limit. A manual Hard Lock takes priority over every automation. If regions overlap, the most recently entered enabled location takes priority over a time schedule.
+
+### Why did a scheduled or location lock not start?
 
 Confirm that:
 
 - Screen Time authorization is active.
-- The schedule is enabled and has a preset assigned.
+- The automation is enabled and has a preset assigned.
 - The preset contains the intended app, category, or website selection.
-- The scheduled days and times are correct, including overnight schedules.
+- For a time schedule, the days and times are correct, including overnight schedules.
+- For a location automation, Location Services and Always access are active and the radius covers the intended boundary.
 - The device date, time, and time zone are correct.
 
 Open Vowntil after changing authorization or major device settings so it can refresh its local state.
+
+Apple's region monitoring is best effort. Boundary events can be delayed by device conditions, location accuracy, network availability, travel speed, restarts, or iOS behavior. Force-quitting Vowntil can also prevent iOS from relaunching it for a region event until the app is opened again. Location automations are a convenience for self-control, not a safety or security boundary.
 
 ### Why is the Usage tab empty or delayed?
 
@@ -58,7 +68,7 @@ Use Vowntil's in-app controls to clear History where available. Removing Vowntil
 
 ## Safety and Limitations
 
-Vowntil is designed for self-control, not parental control, employee monitoring, emergency access control, or permanent device management. Do not block apps or websites you may need for health, safety, travel, authentication, work, school, or emergencies.
+Vowntil is designed for self-control, not parental control, employee monitoring, emergency access control, location tracking, or permanent device management. Do not block apps or websites you may need for health, safety, travel, authentication, work, school, or emergencies.
 
 ## Privacy
 
